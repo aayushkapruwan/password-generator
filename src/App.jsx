@@ -18,8 +18,8 @@ function App() {
     if (charAllowed) str += "!@#$%^&*-_+=[]{}~`"
 
     for (let i = 1; i <= length; i++) {
-      let char = Math.floor(Math.random() * str.length + 1)
-      pass += str.charAt(char)
+      let chari = Math.floor(Math.random() * str.length + 1)
+      pass += str.charAt(chari)
       
     }
 
@@ -71,10 +71,10 @@ function App() {
       <div className="flex items-center gap-x-1">
       <input
           type="checkbox"
-          defaultChecked={numberAllowed}
+          Checked={numberAllowed}
           id="numberInput"
-          onChange={() => {
-              setNumberAllowed((prev) => !prev);
+          onChange={(e) => {
+              setNumberAllowed(e.target.checked);
           }}
       />
       <label htmlFor="numberInput">Numbers</label>
@@ -82,10 +82,10 @@ function App() {
       <div className="flex items-center gap-x-1">
           <input
               type="checkbox"
-              defaultChecked={charAllowed}
+              Checked={charAllowed}
               id="characterInput"
-              onChange={() => {
-                  setCharAllowed((prev) => !prev )
+              onChange={(e) => {
+                  setCharAllowed(e.target.checked )
               }}
           />
           <label htmlFor="characterInput">Characters</label>
